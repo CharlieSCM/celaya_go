@@ -1,0 +1,102 @@
+# name: celaya_go
+# description: A new Flutter project.
+# publish_to: 'none'
+# version: 0.1.0
+
+# environment:
+#   sdk: '>=3.1.0 <4.0.0'
+
+# dependencies:
+#   flutter_local_notifications: ^16.1.0
+#   firebase_messaging: ^14.7.4
+#   location: ^5.0.3
+#   image_picker: ^1.0.4
+#   google_maps_flutter: ^2.5.0
+#   cloud_firestore: ^4.13.1
+#   firebase_auth: ^4.12.1
+#   firebase_core: ^2.21.0
+#   http: ^1.1.0
+#   shared_preferences: ^2.2.1
+#   path_provider: ^2.1.1
+#   sqflite: ^2.3.0
+#   sqflite_common: '^2.5.0+1'
+#   lottie: ^2.6.0
+#   day_night_switcher: ^0.2.0+1
+#   google_sign_in: ^6.1.6
+#   path: ^1.8.3
+#   persistent_bottom_nav_bar: ^5.0.2
+#   flutter:
+#     sdk: flutter
+#   carousel_slider: ^4.2.1
+#   provider: ^6.1.1
+#   concentric_transition: ^1.0.3
+
+
+
+# dev_dependencies:
+#   flutter_test:
+#     sdk: flutter
+#   flutter_lints: ^2.0.0
+
+# flutter:
+#   uses-material-design: true
+#   assets:
+#      - assets/.
+#      - lib/assets/.
+
+
+name: celaya_go
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter_local_notifications: ^16.1.0
+  firebase_messaging: ^14.7.4
+  location: ^5.0.3
+  image_picker: ^1.0.4
+  google_maps_flutter: ^2.5.0
+  cloud_firestore: ^4.13.1
+  firebase_auth: ^4.12.1
+  firebase_core: ^2.21.0
+  http: ^1.1.0
+  shared_preferences: ^2.2.1
+  path_provider: ^2.1.1
+  sqflite: ^2.3.0
+  sqflite_common: '^2.5.0+1'
+  lottie: ^2.6.0
+  day_night_switcher: ^0.2.0+1
+  google_sign_in: ^6.1.6
+  path: ^1.8.3
+  persistent_bottom_nav_bar: ^5.0.2
+  flutter:
+    sdk: flutter
+  carousel_slider: ^4.2.1
+  provider: ^6.1.1
+  concentric_transition: ^1.0.3
+  auto_size_text: ^3.0.0
+cloud_firestore: ^4.13.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/.
+    - lib/assets/.
+  fonts:
+    - family: Pacifico
+      fonts:
+        - asset: fonts/Pacifico-Regular.ttf
+    - family: Anton
+      fonts:
+        - asset: fonts/Anton-Regular.ttf
+    - family: DM Serif Display
+      fonts:
+        - asset: fonts/DMSerifDisplay-Italic.ttf
