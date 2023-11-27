@@ -62,7 +62,7 @@ dependencies:
   cloud_firestore: ^4.13.1
   firebase_auth: ^4.12.1
   firebase_core: ^2.21.0
-  http: ^1.1.0
+  http: ^0.13.6
   shared_preferences: ^2.2.1
   path_provider: ^2.1.1
   sqflite: ^2.3.0
@@ -78,6 +78,8 @@ dependencies:
   provider: ^6.1.1
   concentric_transition: ^1.0.3
   auto_size_text: ^3.0.0
+  sign_in_button: ^3.0.0
+  github_sign_in_plus: ^0.0.1
 cloud_firestore: ^4.13.2
 
 dev_dependencies:
