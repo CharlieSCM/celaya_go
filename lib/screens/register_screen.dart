@@ -1,51 +1,9 @@
-// import 'package:flutter/material.dart';
-// import 'package:celaya_go/screens/register_screen.dart';
-// import 'package:celaya_go/firebase/email_auth.dart';
-
-// class RegisterScreen extends StatefulWidget {
-//   const RegisterScreen({super.key});
-
-//   @override
-//   State<RegisterScreen> createState() => _RegisterScreenState();
-// }
-
-// class _RegisterScreenState extends State<RegisterScreen> {
-//   final conNameUser = TextEditingController();
-//   final conEmailUser = TextEditingController();
-//   final conPwdUser = TextEditingController();
-//   final emailAuth = EmailAuth();
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Registrar Usuario')),
-//       body: Column(children: [
-//         TextFormField(
-//           controller: conNameUser,
-//         ),
-//         TextFormField(
-//           controller: conEmailUser,
-//         ),
-//         TextFormField(
-//           controller: conPwdUser,
-//         ),
-//         ElevatedButton(
-//             onPressed: () {
-//               var email = conEmailUser.text;
-//               var pwd = conPwdUser.text;
-//               emailAuth.createUser(emailUser: email, pwdUser: pwd);
-//             },
-//             child: Text('Registrar Usuario'))
-//       ]),
-//     );
-//   }
-// }
 
 import 'package:flutter/material.dart';
 import 'package:celaya_go/firebase/email_auth.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+  const RegisterScreen({Key? key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -57,16 +15,39 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final conPwdUser = TextEditingController();
   final emailAuth = EmailAuth();
 
+  String errorMessage = '';
+
+  // Función para mostrar una ventana emergente
+  Future<void> _showDialog(String message) async {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Mensaje'),
+          content: Text(message),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Aceptar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 36, 45, 60), // Fondo más oscuro
+      backgroundColor: Color.fromARGB(255, 36, 45, 60),
       appBar: AppBar(
         title: Text(
           'Registrar Usuario',
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Color.fromARGB(255, 36, 45, 60), // Fondo más oscuro
+        backgroundColor: Color.fromARGB(255, 36, 45, 60),
       ),
       body: Padding(
         padding: EdgeInsets.all(20.0),
@@ -132,14 +113,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
             SizedBox(height: 20),
+            Text(
+              errorMessage,
+              style: TextStyle(color: Colors.red),
+            ),
             ElevatedButton(
-              onPressed: () {
-                var email = conEmailUser.text;
-                var pwd = conPwdUser.text;
-                emailAuth.createUser(emailUser: email, pwdUser: pwd);
+              onPressed: () async {
+                if (conNameUser.text.isNotEmpty &&
+                    conEmailUser.text.isNotEmpty &&
+                    conPwdUser.text.isNotEmpty) {
+                  // Todos los campos están llenos
+                  var email = conEmailUser.text;
+                  var pwd = conPwdUser.text;
+                  emailAuth.createUser(emailUser: email, pwdUser: pwd);
+
+                  // Muestra la ventana emergente con el mensaje de verificación
+                  await _showDialog('Verifique su correo por favor.');
+
+                } else {
+                  // Al menos un campo está vacío
+                  setState(() {
+                    errorMessage = 'Llene el formulario.';
+                  });
+                }
               },
               style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 232, 76, 61), // Rojo más intenso
+                primary: Color.fromARGB(255, 232, 76, 61),
               ),
               child: Text('Registrar Usuario'),
             ),
@@ -149,4 +148,3 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 }
-

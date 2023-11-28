@@ -5,7 +5,6 @@ import 'package:celaya_go/SacercaCelaya/historia_screen.dart';
 import 'package:celaya_go/SacercaCelaya/tradiciones_screen.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(MaterialApp(
     home: CelayaInfoScreen(),
@@ -53,12 +52,13 @@ class CelayaInfoScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.bold,
+              fontFamily: 'KdamThmorPro',
             ),
           ),
           SizedBox(height: 8.0),
           Text(
             'Descubre la historia, cultura y tradiciones',
-            style: TextStyle(fontSize: 16.0),
+            style: TextStyle(fontSize: 16.0, fontFamily: 'KdamThmorPro'),
             textAlign: TextAlign.center,
           ),
         ],
@@ -94,6 +94,7 @@ class CelayaInfoScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'KdamThmorPro',
                   ),
                 ),
               ],

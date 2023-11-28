@@ -102,3 +102,6 @@ flutter:
     - family: DM Serif Display
       fonts:
         - asset: fonts/DMSerifDisplay-Italic.ttf
+    - family: KdamThmorPro
+      fonts:
+        - asset: fonts/KdamThmorPro-Regular.ttf
