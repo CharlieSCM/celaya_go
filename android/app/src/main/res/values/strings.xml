@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+<string name="app_name">Celaya Go</string>
+<string name="facebook_app_id">1391395711775559</string>
+<string name="fb_login_protocol_scheme">fb1391395711775559</string>
+<string name="facebook_client_token">3d0a7ef792f4b84a6755ea39f180e2b2</string>
+
+</resources>

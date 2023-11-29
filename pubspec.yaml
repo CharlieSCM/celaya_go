@@ -54,6 +54,7 @@ environment:
   sdk: '>=3.1.0 <4.0.0'
 
 dependencies:
+  flutter_facebook_auth: ^5.0.11
   flutter_local_notifications: ^16.1.0
   firebase_messaging: ^14.7.4
   location: ^5.0.3
