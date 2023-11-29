@@ -78,12 +78,15 @@ import 'package:flutter/material.dart';
 import '../assets/global_values.dart';
 import '../assets/styles_app.dart';
 import 'package:celaya_go/firebase/notificaciones.dart';
+import 'package:firebase_in_app_messaging/firebase_in_app_messaging.dart';
+import 'package:firebase_app_installations/firebase_app_installations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseAuth.instance.authStateChanges();
   await PushNotificationProvider().initializeApp();
+  String fidO = await FirebaseInstallations.instance.getId();
 
   runApp(MainApp());
 }
